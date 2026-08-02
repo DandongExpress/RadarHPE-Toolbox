@@ -1,0 +1,35 @@
+# PULSE — single-frame, HuPR
+# Mirrors `python train.py --config configs/pulse_1f_hupr.yaml` in the
+# original PULSE repository (hyperparameters per its README table).
+name: pulse_1f_hupr
+
+dataset:
+  name: hupr
+  root: data/HuPR
+  train_split: train
+  val_split: val
+
+model:
+  name: pulse_1f
+  kwargs:
+    range_bins: 64
+    angle_bins: 64
+    doppler_bins: 16
+    patch_size: [4, 4]
+    embed_dim: 32
+    neighborhood: 3
+    beta: 1.0
+    transformer_depth: 4
+    attention_heads: 4
+    num_joints: 17
+
+train:
+  batch_size: 8
+  epochs: 100
+  lr: 1.0e-4
+  weight_decay: 0.01
+  num_workers: 4
+  save_every: 10
+  checkpoint_dir: checkpoints/pulse_1f_hupr
+
+device: cuda

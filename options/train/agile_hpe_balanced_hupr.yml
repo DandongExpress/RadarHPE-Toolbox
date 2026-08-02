@@ -1,0 +1,27 @@
+# Agile mmWave HPE — "balanced" runtime profile, HuPR
+# Mirrors `python train.py --config configs/balanced.yaml` in the original
+# Agile-MmWave-Hpe repository.
+name: agile_hpe_balanced_hupr
+
+dataset:
+  name: hupr
+  root: data/HuPR
+  train_split: train
+  val_split: val
+
+model:
+  name: agile_hpe
+  kwargs:
+    runtime_profile: balanced
+    num_joints: 17
+
+train:
+  batch_size: 32
+  epochs: 100
+  lr: 1.0e-3
+  weight_decay: 0.0
+  num_workers: 4
+  save_every: 10
+  checkpoint_dir: checkpoints/agile_hpe_balanced_hupr
+
+device: cuda

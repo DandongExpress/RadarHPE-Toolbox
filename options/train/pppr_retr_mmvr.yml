@@ -1,0 +1,36 @@
+# PPPR — RETR backbone on MMVR with PPPR input representation
+# Mirrors:
+#   python prepare_pppr.py --dataset MMVR --data_root data/MMVR --output_root data/MMVR_pppr
+#   python train.py --model RETR --dataset MMVR --input_type pppr --data_root data/MMVR_pppr
+# in the original PPPR repository.
+name: pppr_retr_mmvr
+
+dataset:
+  name: mmvr
+  root: data/MMVR_pppr
+  train_split: train
+  val_split: val
+
+model:
+  name: pppr
+  kwargs:
+    backbone: retr
+    input_repr: pppr
+    num_joints: 17
+    mhp_kwargs:
+      w_em: 0.5
+      w_kine: 0.5
+      n_iter: 100
+      tau_pct: 10.0
+      lr: 1.0e-3
+
+train:
+  batch_size: 16
+  epochs: 100
+  lr: 1.0e-4
+  weight_decay: 0.01
+  num_workers: 4
+  save_every: 10
+  checkpoint_dir: checkpoints/pppr_retr_mmvr
+
+device: cuda
