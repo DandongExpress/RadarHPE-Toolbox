@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "radarhpe"
+version = "0.1.0"
+description = "RadarHPE-Toolbox: a unified, physics-guided toolbox for mmWave radar Human Pose Estimation (HPE)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Shuntian Zheng", email = "Shuntian.Zheng@warwick.ac.uk" },
+]
+keywords = [
+    "mmwave", "radar", "human pose estimation", "hpe", "pytorch",
+    "privacy-preserving sensing", "physics-guided deep learning",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=1.13",
+    "numpy",
+    "scipy",
+    "einops",
+    "pyyaml",
+    "tqdm",
+    "huggingface_hub",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "flake8", "black", "isort"]
+onnx = ["onnx", "onnxruntime"]
+
+[project.urls]
+Homepage = "https://github.com/DandongExpress/RadarHPE-Toolbox"
+Issues = "https://github.com/DandongExpress/RadarHPE-Toolbox/issues"
+
+[project.scripts]
+radarhpe-infer = "radarhpe.inference:main"
+
+# Third-party plugin registration, mirrors pyiqa's entry-point pattern so that
+# external packages can register new archs/datasets/metrics without forking
+# this repo. See docs/Instruction.md for how to author a plugin.
+[project.entry-points."radarhpe.archs"]
+[project.entry-points."radarhpe.datasets"]
+[project.entry-points."radarhpe.metrics"]
+
+[tool.setuptools.packages.find]
+include = ["radarhpe*"]

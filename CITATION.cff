@@ -1,0 +1,68 @@
+cff-version: 1.2.0
+message: >-
+  If you use RadarHPE-Toolbox, please cite the underlying papers
+  corresponding to the model(s) you use (see README "Model Zoo" and
+  docs/ModelCard.md), in addition to this software repository.
+title: "RadarHPE-Toolbox: A Unified mmWave Radar Human Pose Estimation Toolbox"
+authors:
+  - family-names: Zheng
+    given-names: Shuntian
+    affiliation: University of Warwick
+repository-code: "https://github.com/DandongExpress/RadarHPE-Toolbox"
+license: MIT
+preferred-citation:
+  type: generic
+  title: "RadarHPE-Toolbox"
+  authors:
+    - family-names: Zheng
+      given-names: Shuntian
+references:
+  - type: article
+    title: "Why Learn What Physics Already Knows? Realizing Agile mmWave-based Human Pose Estimation via Physics-Guided Preprocessing"
+    authors:
+      - family-names: Zheng
+        given-names: Shuntian
+      - family-names: Li
+        given-names: Jiaqi
+      - family-names: Ni
+        given-names: Minzhe
+      - family-names: Lu
+        given-names: Xiaoman
+      - family-names: Guan
+        given-names: Yu
+    year: 2026
+    journal: "arXiv preprint arXiv:2603.08236"
+  - type: article
+    title: "Doppler Prompting for Stable mmWave-based Human Pose Estimation"
+    authors:
+      - family-names: Zheng
+        given-names: Shuntian
+      - family-names: Li
+        given-names: Jiaqi
+      - family-names: Lu
+        given-names: Xiaoman
+      - family-names: He
+        given-names: Shuai
+      - family-names: Guan
+        given-names: Yu
+    year: 2026
+    journal: "arXiv preprint arXiv:2605.13233"
+  - type: article
+    title: "Person Parametric Physics-informed Representation for mmWave-based Human Pose Estimation"
+    authors:
+      - family-names: Zheng
+        given-names: Shuntian
+      - family-names: Li
+        given-names: Jiaqi
+      - family-names: Wang
+        given-names: Guangming
+      - family-names: Ni
+        given-names: Minzhe
+      - family-names: Palit
+        given-names: Arnad
+      - family-names: Montana
+        given-names: Giovanni
+      - family-names: Guan
+        given-names: Yu
+    year: 2025
+    journal: "arXiv preprint arXiv:2512.23054"

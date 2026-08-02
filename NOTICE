@@ -1,0 +1,36 @@
+RadarHPE-Toolbox — Third-Party Notices
+======================================
+
+RadarHPE-Toolbox unifies code and ideas from three previously separate,
+single-paper repositories by the same authors. This project (the glue code,
+registry, unified data loaders, docs, and CLI) is released under the MIT
+License (see LICENSE). The original per-paper implementations that are
+vendored into `radarhpe/archs/` retain their own upstream license terms as
+noted below. When copying the original implementations into this toolbox
+(see the `TODO(integration)` markers in each `*_arch.py` file), preserve the
+original file-level license headers.
+
+1. PULSE (Doppler Prompting for Stable mmWave-based Human Pose Estimation)
+   Source: https://github.com/DandongExpress/Doppler-Prompting-for-Stable-mmWave-based-Human-Pose-Estimation
+   License: MIT License
+   Integrated into: radarhpe/archs/pulse_arch.py
+
+2. Agile-MmWave-Hpe (Why Learn What Physics Already Knows?)
+   Source: https://github.com/DandongExpress/Agile-MmWave-Hpe
+   License: Apache License 2.0
+   Integrated into: radarhpe/archs/agile_arch.py
+   NOTE: Apache-2.0 licensed code carries its own NOTICE/attribution
+   requirements (see the original repository's LICENSE file). Any file
+   copied from this repository must retain its Apache-2.0 header.
+
+3. PPPR (Person Parametric Physics-informed Representation for mmWave-based
+   Human Pose Estimation)
+   Source: https://github.com/DandongExpress/PPPR
+   License: MIT License
+   Integrated into: radarhpe/archs/pppr_arch.py
+
+All three original repositories are authored by Shuntian Zheng et al.,
+University of Warwick. No third-party (non-author) code is currently
+vendored. If external baselines (e.g. mmDiff, milliMamba, RETR, HuprModel,
+PoseformerV2) are vendored in as backbones under `radarhpe/archs/backbones/`,
+add their upstream license terms to this file before distribution.

@@ -1,0 +1,39 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Data & checkpoints (large, user-provided; see docs/Dataset_Preparation.md)
+data/
+checkpoints/
+*.pth
+*.onnx
+!examples/**/*.onnx
+
+# Logs / experiment outputs
+logs/
+runs/
+outputs/
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
