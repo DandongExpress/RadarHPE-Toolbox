@@ -6,9 +6,7 @@ RadarHPE-Toolbox brings together three previously separate, single-paper
 research codebases into one library with a consistent API, so that
 beginners can run a pretrained model in three lines of Python, and
 researchers can benchmark new ideas against multiple physics-guided
-baselines without reimplementing data loading or metrics from scratch. The
-project's structure and developer experience are directly modeled on
-[IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch).
+baselines without reimplementing data loading or metrics from scratch. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](pyproject.toml)
