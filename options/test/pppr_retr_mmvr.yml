@@ -1,0 +1,18 @@
+name: pppr_retr_mmvr_test
+
+dataset:
+  name: mmvr
+  root: data/MMVR_pppr
+  test_split: test
+
+model:
+  name: pppr
+  kwargs:
+    backbone: retr
+    input_repr: pppr
+    num_joints: 17
+
+metrics: [mpjpe, pa_mpjpe]
+
+eval:
+  batch_size: 16

@@ -1,0 +1,17 @@
+name: agile_hpe_balanced_hupr_test
+
+dataset:
+  name: hupr
+  root: data/HuPR
+  test_split: test
+
+model:
+  name: agile_hpe
+  kwargs:
+    runtime_profile: balanced
+    num_joints: 17
+
+metrics: [mpjpe, pa_mpjpe]
+
+eval:
+  batch_size: 32

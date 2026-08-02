@@ -1,0 +1,25 @@
+name: pulse_1f_hupr_test
+
+dataset:
+  name: hupr
+  root: data/HuPR
+  test_split: test
+
+model:
+  name: pulse_1f
+  kwargs:
+    range_bins: 64
+    angle_bins: 64
+    doppler_bins: 16
+    patch_size: [4, 4]
+    embed_dim: 32
+    neighborhood: 3
+    beta: 1.0
+    transformer_depth: 4
+    attention_heads: 4
+    num_joints: 17
+
+metrics: [mpjpe, pa_mpjpe, mpjve]
+
+eval:
+  batch_size: 8
