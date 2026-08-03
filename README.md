@@ -9,7 +9,7 @@ RadarHPE-Toolbox is a unified, physics-guided library for **millimetre-wave (mmW
 <p align="center">
   <img src="docs/assets/teaser.png" alt="mmWave radar enables privacy-preserving, through-obstacle, low-cost human sensing" width="92%"/>
   <br/>
-  <em>Privacy-preserving · works in the dark · sees through soft obstacles · runs on low-cost TI boards</em>
+  <em>Privacy-preserving · works in the dark · sees through soft obstacles · runs on low-cost radar chips</em>
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
