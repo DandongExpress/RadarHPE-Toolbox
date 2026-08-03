@@ -31,6 +31,7 @@ dependencies = [
     "pyyaml",
     "tqdm",
     "huggingface_hub",
+    "matplotlib",
 ]
 
 [project.optional-dependencies]
@@ -52,4 +53,12 @@ radarhpe-infer = "radarhpe.inference:main"
 [project.entry-points."radarhpe.metrics"]
 
 [tool.setuptools.packages.find]
+where = ["."]
 include = ["radarhpe*"]
+
+[tool.setuptools.package-data]
+radarhpe = ["*.yml", "*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

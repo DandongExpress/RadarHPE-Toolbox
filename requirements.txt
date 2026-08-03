@@ -5,3 +5,4 @@ einops
 pyyaml
 tqdm
 huggingface_hub
+matplotlib
