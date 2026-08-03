@@ -1,0 +1,58 @@
+# Registry metadata for every model shipped with RadarHPE-Toolbox.
+# This mirrors pyiqa's default_model_configs.yml: it is *not* imported by the
+# Python registry mechanism (registration happens via @MODEL_REGISTRY.register
+# decorators in radarhpe/archs/*_arch.py) — it exists so that docs, the CLI
+# `--list` output, and third-party tooling have a single machine-readable
+# source of truth for citations, supported datasets, and checkpoint links.
+
+pulse_1f:
+  display_name: "PULSE (single-frame)"
+  arch: radarhpe.archs.pulse_arch.PULSESingleFrame
+  paper: "Zheng et al., Doppler Prompting for Stable mmWave-based Human Pose Estimation, ICML 2026"
+  arxiv: "2605.13233"
+  datasets: [HuPR, XRF55, mmRadPose]
+  metrics: [MPJPE, PA-MPJPE, MPJVE, AKV]
+  params_m: 12
+  latency_ms: 5.1
+  checkpoints:
+    hupr: null       # TODO: fill in HF Hub repo id once uploaded, e.g. DandongExpress/radarhpe-pulse-1f-hupr
+    xrf55: null
+    mmradpose: null
+
+pulse_kf:
+  display_name: "PULSE (multi-frame, K=9)"
+  arch: radarhpe.archs.pulse_arch.PULSEMultiFrame
+  paper: "Zheng et al., Doppler Prompting for Stable mmWave-based Human Pose Estimation, ICML 2026"
+  arxiv: "2605.13233"
+  datasets: [HuPR, XRF55, mmRadPose]
+  metrics: [MPJPE, PA-MPJPE, MPJVE, AKV]
+  checkpoints:
+    hupr: null
+    xrf55: null
+    mmradpose: null
+
+agile_hpe:
+  display_name: "Agile mmWave HPE (SSP/MCP/HMSF + PRN)"
+  arch: radarhpe.archs.agile_arch.AgileHPE
+  paper: "Zheng et al., Why Learn What Physics Already Knows?, ICME 2026"
+  arxiv: "2603.08236"
+  datasets: [HuPR]
+  metrics: [MAJPE, PA-MAJPE]
+  params_m: 5.1
+  runtime_profiles: [ultra_light, light, balanced, high_precision, ultra_precision]
+  edge_target: "Raspberry Pi 5"
+  edge_fps: 18.2
+  checkpoints:
+    hupr_balanced: null
+
+pppr:
+  display_name: "PPPR (Gaussian-primitive parametric representation)"
+  arch: radarhpe.archs.pppr_arch.PPPRModel
+  paper: "Zheng et al., Person Parametric Physics-informed Representation for mmWave-based HPE, ACM IMWUT/UbiComp 2026"
+  arxiv: "2512.23054"
+  datasets: [MMVR, HuPR, XRF55]
+  metrics: [MPJPE, PA-MPJPE]
+  supported_backbones: [RETR, HuprModel, mmDiff, PoseformerV2, MLP]
+  supported_input_types: [heatmap, pc, pppr, pppr_heatmap, pppr_pc]
+  checkpoints:
+    retr_mmvr_pppr: null

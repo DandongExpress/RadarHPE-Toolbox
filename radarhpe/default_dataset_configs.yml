@@ -1,0 +1,47 @@
+# Dataset registry metadata: expected local paths, on-disk layout, and
+# pointers to the original download pages / licenses. See
+# docs/Dataset_Preparation.md for full instructions. Large datasets are never
+# redistributed by this toolbox — only small demo/synthetic samples may be
+# hosted under the 'dataset' repo type on the Hugging Face Hub.
+
+hupr:
+  display_name: "HuPR"
+  root: data/HuPR
+  layout: npz            # <root>/{train,val,test}.npz with keys 'rad' [N,64,64,16], 'joints' [N,17,3]
+  default_shape: [64, 64, 16]
+  num_joints: 17
+  single_or_multi_person: single
+  download_page: "https://github.com/HuPR-project/HuPR"
+  used_by: [pulse_1f, pulse_kf, agile_hpe, pppr]
+
+xrf55:
+  display_name: "XRF55"
+  root: data/XRF55
+  layout: paired          # after running tools/preprocess_xrf55.py (see docs)
+  default_shape: [256, 128]
+  num_joints: 17
+  single_or_multi_person: multi
+  download_page: "see docs/Dataset_Preparation.md"
+  preprocessing_script: tools/preprocess_xrf55.py
+  used_by: [pulse_1f, pulse_kf, pppr]
+
+mmradpose:
+  display_name: "mmRadPose"
+  root: data/mmRadPose
+  layout: paired
+  default_shape: [64, 64, 16]
+  num_joints: 17
+  single_or_multi_person: single
+  download_page: "IEEE DataPort — see docs/Dataset_Preparation.md"
+  used_by: [pulse_1f, pulse_kf]
+
+mmvr:
+  display_name: "MMVR"
+  root: data/MMVR
+  layout: npz             # per-frame .npz with keys 'heatmap' [R,A] or [R,A,E], optional 'joints', 'doppler'
+  default_shape: [256, 128]
+  num_joints: 17
+  single_or_multi_person: single
+  radar_hardware: "TI AWR2243"
+  download_page: "see docs/Dataset_Preparation.md"
+  used_by: [pppr]
