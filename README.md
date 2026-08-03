@@ -36,8 +36,6 @@ The scientific opportunity is real — but the **engineering barrier** has been 
 
 **RadarHPE-Toolbox exists to close that gap:** one package for fundamentals → datasets → models → metrics, with a plugin API so the community can grow a shared model zoo instead of a pile of one-off repositories.
 
-> Packaging and developer experience are inspired by
-> [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch): registries, configs, and a short path from clone → first experiment.
 
 ---
 
