@@ -18,8 +18,25 @@ data/
 - **Used by:** `pulse_1f`, `pulse_kf`, `agile_hpe`, `pppr`
 - **Radar hardware:** TI IWR1843BOOST
 - **Native resolution:** 64×64×8 (range × angle × Doppler)
-- **Download:** see the [HuPR project repository](https://github.com/HuPR-project/HuPR)
-- **Expected layout** (packed npz, one file per split):
+- **Download:** [HuPR GitHub](https://github.com/robert80203/HuPR-A-Benchmark-for-Human-Pose-Estimation-Using-Millimeter-Wave-Radar) /
+  [Hugging Face](https://huggingface.co/datasets/nirajpkini/HuPR)
+- **Raw per-frame heatmaps** (as released after HuPR preprocessing):
+
+  ```
+  data/HuPR/
+  ├── single_1/
+  │   ├── hori/000000000.npy   # complex (D, R, A, E) ≈ (16, 64, 64, 8)
+  │   ├── vert/000000000.npy
+  │   └── visualization/
+  ├── single_2/
+  └── hrnet_annot_{train,val,test}.json
+  ```
+
+  Explore these with `radarhpe.basics` — see
+  [MmWave_Fundamentals.md](MmWave_Fundamentals.md) and
+  `examples/demo_heatmap.py`.
+
+- **Expected layout for model training** (packed npz, one file per split):
 
   ```
   data/HuPR/
@@ -29,7 +46,9 @@ data/
   ```
 
   Complex RAD cubes are accepted and converted to reflection magnitude on
-  load. Axis order must remain `(range, angle, doppler)`.
+  load. Axis order must remain `(range, angle, doppler)`. Use
+  `radarhpe.basics.to_rad_magnitude` to convert a native HuPR frame into this
+  layout.
 
 ## XRF55
 

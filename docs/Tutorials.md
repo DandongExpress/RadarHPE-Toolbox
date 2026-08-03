@@ -4,6 +4,36 @@ Beginner-to-advanced walkthroughs for RadarHPE-Toolbox. All snippets assume
 `pip install -e .` has been run from the repository root (see
 [README.md](../README.md#installation)).
 
+## 0. mmWave fundamentals (start here if you are new to radar)
+
+Before training pose models, it helps to see what a HuPR heatmap actually
+contains and how classical CFAR turns it into a point cloud. The full primer
+is [MmWave_Fundamentals.md](MmWave_Fundamentals.md) (TI Radar Academy + HuPR
+conventions). Minimal code path:
+
+```python
+from radarhpe.basics import (
+    RadarConfig, synthesize_hupr_frame, to_ra_map, to_rad_magnitude,
+    heatmap_to_pointcloud, plot_hupr_overview, summarize_resolutions,
+)
+
+print(summarize_resolutions(RadarConfig()))
+
+cube = synthesize_hupr_frame()       # replace with load_heatmap('.../hori/xxx.npy')
+print(to_ra_map(cube).shape)         # (64, 64) range-azimuth
+print(to_rad_magnitude(cube).shape)  # (64, 64, D) model-ready RAD
+
+cloud, cfar = heatmap_to_pointcloud(cube, top_k=64)
+plot_hupr_overview(cube, cloud=cloud, show=True)
+```
+
+Or from the shell (writes figures under `outputs/`):
+
+```bash
+python examples/demo_heatmap.py --save outputs/ra_rd.png
+python examples/demo_cfar_pointcloud.py --save outputs/overview.png
+```
+
 ## 1. List what's available
 
 ```python

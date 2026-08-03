@@ -6,6 +6,13 @@ All notable changes to RadarHPE-Toolbox are documented in this file.
 
 ### Added
 
+- **mmWave fundamentals track** for newcomers:
+  - Package `radarhpe.basics` — FMCW physics helpers, HuPR heatmap I/O
+    (RA / RD / RAD converters), CA-CFAR & OS-CFAR, heatmap→point-cloud,
+    matplotlib visualisers, and synthetic demo cubes (no dataset download).
+  - Docs: `docs/MmWave_Fundamentals.md` (TI Radar Academy + HuPR primer).
+  - Examples: `examples/demo_heatmap.py`, `examples/demo_cfar_pointcloud.py`.
+  - Tests: `tests/test_basics.py`.
 - Initial project scaffold: registry-based architecture (`MODEL_REGISTRY`,
   `DATASET_REGISTRY`, `METRIC_REGISTRY`, `BACKBONE_REGISTRY`), unified
   dataset loaders for HuPR / XRF55 / mmRadPose / MMVR, pose metrics
